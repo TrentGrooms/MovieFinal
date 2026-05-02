@@ -10,9 +10,9 @@ export default function MediaCard({ item }: MediaCardProps) {
     const router = useRouter();
 
     const handleClick = () => {
-        if (item.media_type === "movie") {
+        if (item.media_type == "movie") {
             router.push(`/movie/${item.id}`);
-        } else if (item.media_type === "tv") {
+        } else if (item.media_type == "tv") {
             router.push(`/tv/${item.id}`);
         }
     };
