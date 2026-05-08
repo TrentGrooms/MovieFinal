@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import NavBar from "../../components/NavBar";
 import MediaCard from "../../components/MediaCard";
+import WatchlistButton from "@/app/components/WatchListButton";
 
 export default function TVPage() {
     const params = useParams();
@@ -81,6 +82,12 @@ export default function TVPage() {
                                 <span key={g.id} className="px-2 py-1 bg-gray-700 text-white text-xs rounded-full">{g.name}</span>
                             ))}
                         </div>
+                        <WatchlistButton
+                            mediaId={show.id}
+                            mediaType="tv"
+                            title={show.title}
+                            poster={show.poster_path}
+                        />
                     </div>
                 </div>
             </div>

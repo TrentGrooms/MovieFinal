@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import NavBar from "../../components/NavBar";
 import MediaCard from "../../components/MediaCard";
+import WatchlistButton from "@/app/components/WatchListButton";
 
 export default function MoviePage() {
     const params = useParams();
@@ -65,6 +66,13 @@ export default function MoviePage() {
                         <p className="text-sm text-gray-300">
                             {movie.release_date?.split("-")[0]} • {movie.runtime} min
                         </p>
+                        <WatchlistButton
+                            mediaId={movie.id}
+                            mediaType="movie"
+                            title={movie.title}
+                            poster={movie.poster_path}
+                        />
+                        
                     </div>
                 </div>
             </div>
